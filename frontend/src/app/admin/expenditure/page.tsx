@@ -1,0 +1,79 @@
+'use client'
+import { useState } from 'react'
+import { Plus, Edit, Trash2, Search } from 'lucide-react'
+
+export default function AdminExpenditure() {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const expenditures = [
+    { id: 1, project: 'Office Building', category: 'Construction', amount: '50000', date: '2024-01-15' },
+    { id: 2, project: 'Website Development', category: 'IT', amount: '15000', date: '2024-01-10' },
+    { id: 3, project: 'Marketing Campaign', category: 'Marketing', amount: '8000', date: '2024-01-05' },
+  ]
+
+  const filteredExpenditures = expenditures.filter(exp =>
+    exp.project.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    exp.category.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  return (
+    <div>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-slate-900">Expenditure</h1>
+        <button className="bg-slate-900 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-slate-800 transition-colors">
+          <Plus size={20} />
+          Add Record
+        </button>
+      </div>
+
+      {/* Search */}
+      <div className="mb-6">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <input
+            type="text"
+            placeholder="Search expenditures..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      {/* Expenditure Table */}
+      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <table className="w-full">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Project</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {filteredExpenditures.map((exp) => (
+              <tr key={exp.id} className="hover:bg-gray-50">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">{exp.project}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{exp.category}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">SLL {exp.amount}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{exp.date}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                  <div className="flex gap-2">
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit size={18} />
+                    </button>
+                    <button className="text-red-600 hover:text-red-800">
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
