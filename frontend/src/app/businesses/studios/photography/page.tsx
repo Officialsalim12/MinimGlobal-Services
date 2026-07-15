@@ -135,7 +135,7 @@ export default function PhotographyPage() {
       <section className="ms-intro">
         <div className="ms-container ms-intro-grid">
           <h2>
-            You Need Awesome Imagery. And You Need It Like�Yesterday. We Get It.
+            You Need Awesome Imagery. And You Need It Like…Yesterday. We Get It.
           </h2>
           <div>
             <p>

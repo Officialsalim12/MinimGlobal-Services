@@ -20,7 +20,7 @@ export default function StudiosTeamPage() {
             <h2>Meet the Studio Team</h2>
             <p className="ms-team-intro">
               These are the people you work with across our five studios. Reach
-              out and we�ll connect you with the right specialist for your
+              out and we’ll connect you with the right specialist for your
               project.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function StudiosTeamPage() {
           <p className="ms-eyebrow">Join or collaborate</p>
           <h2>Want to Work With Our Team?</h2>
           <p>
-            Tell us about your project and we�ll match you with the right
+            Tell us about your project and we’ll match you with the right
             studio staff.
           </p>
           <div

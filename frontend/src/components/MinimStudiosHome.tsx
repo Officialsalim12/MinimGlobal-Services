@@ -152,10 +152,10 @@ export default function MinimStudiosHome() {
       <section className="ms-cta ms-cta-compact">
         <div className="ms-container ms-section-head ms-section-head-center">
           <p className="ms-eyebrow">Get in touch</p>
-          <h2>Let’s Get Started!</h2>
+          <h2>Letâ€™s Get Started!</h2>
           <p>
             Tell us which studio you need photography, video, sound, displays,
-            or design and we’ll take it from there.
+            or design and weâ€™ll take it from there.
           </p>
           <div
             className="ms-hero-actions"

@@ -198,7 +198,7 @@ export default function DisplaysStudioPage() {
           <p>
             Tell us about your next conference, gala, launch, or live show  
             lighting, LED walls, projection, or full stage production and
-            we’ll help bring it to life.
+            weâ€™ll help bring it to life.
           </p>
           <div
             className="ms-hero-actions"

@@ -100,9 +100,9 @@ export default function DesignStudioPage() {
       <section className="ms-cta ms-cta-compact">
         <div className="ms-container ms-section-head ms-section-head-center">
           <p className="ms-eyebrow">Get in touch</p>
-          <h2>Let’s Design Something Strong</h2>
+          <h2>Letâ€™s Design Something Strong</h2>
           <p>
-            Tell us about your brand or campaign and we’ll help shape the
+            Tell us about your brand or campaign and weâ€™ll help shape the
             visuals.
           </p>
           <div

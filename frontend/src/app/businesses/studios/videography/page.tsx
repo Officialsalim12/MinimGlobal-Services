@@ -116,9 +116,9 @@ export default function VideographyPage() {
           <h2>Video Storytelling</h2>
           <div>
             <p>
-              It�s no secret that storytelling with video has become the most
+              It’s no secret that storytelling with video has become the most
               effective and powerful way to connect with your customers. As a
-              full service video team, we�ll help with the entire process,
+              full service video team, we’ll help with the entire process,
               taking your project from concept to reality.
             </p>
             <div className="ms-hero-actions ms-intro-actions">
@@ -163,7 +163,7 @@ export default function VideographyPage() {
           <p className="ms-vid-types-copy">
             Video is now the most viewed format online and attention spans are
             at an all time low. You have a lot of distractions to compete with
-            and a short window to grab someone�s attention. A short, well
+            and a short window to grab someone’s attention. A short, well
             planned, and direct message is key. We can help craft your message
             so your video gets just the results you want.
           </p>
@@ -192,14 +192,14 @@ export default function VideographyPage() {
         </div>
       </section>
 
-      {/* Let�s Get Started */}
+      {/* Let’s Get Started */}
       <section className="ms-cta ms-cta-compact">
         <div className="ms-container ms-section-head ms-section-head-center">
           <p className="ms-eyebrow">Get in touch</p>
-          <h2>Let�s Get Started!</h2>
+          <h2>Let’s Get Started!</h2>
           <p>
             Ready to produce a commercial, brand film, or event video? Tell us
-            about your project and we�ll get back to you quickly.
+            about your project and we’ll get back to you quickly.
           </p>
           <div
             className="ms-hero-actions"
