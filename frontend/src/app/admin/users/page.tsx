@@ -6,9 +6,9 @@ export default function AdminUsers() {
   const [searchTerm, setSearchTerm] = useState('')
 
   const users = [
-    { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin', createdAt: '2024-01-15' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'Editor', createdAt: '2024-01-10' },
-    { id: 3, name: 'Bob Johnson', email: 'bob@example.com', role: 'User', createdAt: '2024-01-05' },
+    { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin', createdAt: '2026-01-15' },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'Editor', createdAt: '2026-01-10' },
+    { id: 3, name: 'Bob Johnson', email: 'bob@example.com', role: 'User', createdAt: '2026-01-05' },
   ]
 
   const filteredUsers = users.filter(user =>

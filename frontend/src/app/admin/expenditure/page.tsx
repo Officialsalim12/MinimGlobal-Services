@@ -6,9 +6,9 @@ export default function AdminExpenditure() {
   const [searchTerm, setSearchTerm] = useState('')
 
   const expenditures = [
-    { id: 1, project: 'Office Building', category: 'Construction', amount: '50000', date: '2024-01-15' },
-    { id: 2, project: 'Website Development', category: 'IT', amount: '15000', date: '2024-01-10' },
-    { id: 3, project: 'Marketing Campaign', category: 'Marketing', amount: '8000', date: '2024-01-05' },
+    { id: 1, project: 'Office Building', category: 'Construction', amount: '50000', date: '2026-01-15' },
+    { id: 2, project: 'Website Development', category: 'IT', amount: '15000', date: '2026-01-10' },
+    { id: 3, project: 'Marketing Campaign', category: 'Marketing', amount: '8000', date: '2026-01-05' },
   ]
 
   const filteredExpenditures = expenditures.filter(exp =>

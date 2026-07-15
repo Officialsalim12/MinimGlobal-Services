@@ -47,8 +47,7 @@ export default function Footer() {
           <ul className="dh-footer-links">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/services">Services</Link></li>
-            <li><Link href="/media">Media</Link></li>
+            <li><Link href="/businesses">Our Businesses</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>

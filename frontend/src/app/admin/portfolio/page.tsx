@@ -6,9 +6,9 @@ export default function AdminPortfolio() {
   const [searchTerm, setSearchTerm] = useState('')
 
   const portfolioItems = [
-    { id: 1, title: 'Corporate Event Photography', category: 'Photography', status: 'Published', date: '2024-01-15' },
-    { id: 2, title: 'Product Launch Video', category: 'Videography', status: 'Published', date: '2024-01-10' },
-    { id: 3, title: 'Brand Identity Design', category: 'Design', status: 'Draft', date: '2024-01-05' },
+    { id: 1, title: 'Corporate Event Photography', category: 'Photography', status: 'Published', date: '2026-01-15' },
+    { id: 2, title: 'Product Launch Video', category: 'Videography', status: 'Published', date: '2026-01-10' },
+    { id: 3, title: 'Brand Identity Design', category: 'Design', status: 'Draft', date: '2026-01-05' },
   ]
 
   const filteredItems = portfolioItems.filter(item =>

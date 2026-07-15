@@ -8,38 +8,38 @@ const pressReleases = [
   {
     id: 1,
     title: 'Minim Global Services Launches New Construction Project in Freetown',
-    date: 'January 15, 2024',
+    date: 'January 15, 2026',
     excerpt:
       'Minim Architect advances community infrastructure with a new construction initiative supporting local jobs and skills.',
     image: '/images/Hero-4.jpg',
-    link: '/media',
+    link: '/businesses',
   },
   {
     id: 2,
     title: 'Minim Studios Partners with Local Artists for Cultural Festival',
-    date: 'January 10, 2024',
+    date: 'January 10, 2026',
     excerpt:
       'Creative collaboration strengthens Sierra Leone’s cultural calendar through media production and live storytelling.',
     image: '/images/Hero-1.jpg',
-    link: '/media',
+    link: '/businesses',
   },
   {
     id: 3,
     title: 'Minim Food Expands Catering Services to Corporate Events',
-    date: 'January 5, 2024',
+    date: 'January 5, 2026',
     excerpt:
       'Quality catering grows to serve corporate clients while creating employment across the food services division.',
     image: '/images/Hero-3.jpg',
-    link: '/media',
+    link: '/businesses',
   },
   {
     id: 4,
     title: 'Minim Clothing Unveils New Corporate Wear Collection',
-    date: 'December 20, 2023',
+    date: 'December 20, 2026',
     excerpt:
       'Local apparel design meets workplace needs with durable, contemporary corporate and family clothing lines.',
     image: '/images/Hero-5.jpg',
-    link: '/media',
+    link: '/businesses',
   },
 ]
 

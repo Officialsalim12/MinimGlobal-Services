@@ -24,10 +24,10 @@ const channels = [
     href: 'mailto:info@minimglobal.com',
   },
   {
-    title: 'Media',
-    detail: 'Latest projects and insights',
-    value: 'Explore our Media',
-    href: '/media',
+    title: 'Businesses',
+    detail: 'Explore our divisions',
+    value: 'View Our Businesses',
+    href: '/businesses',
   },
 ]
 

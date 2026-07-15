@@ -6,9 +6,9 @@ export default function AdminContact() {
   const [searchTerm, setSearchTerm] = useState('')
 
   const messages = [
-    { id: 1, name: 'John Doe', email: 'john@example.com', subject: 'General Inquiry', date: '2024-01-15', status: 'New' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', subject: 'Partnership Proposal', date: '2024-01-10', status: 'Read' },
-    { id: 3, name: 'Bob Johnson', email: 'bob@example.com', subject: 'Service Quote', date: '2024-01-05', status: 'Replied' },
+    { id: 1, name: 'John Doe', email: 'john@example.com', subject: 'General Inquiry', date: '2026-01-15', status: 'New' },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', subject: 'Partnership Proposal', date: '2026-01-10', status: 'Read' },
+    { id: 3, name: 'Bob Johnson', email: 'bob@example.com', subject: 'Service Quote', date: '2026-01-05', status: 'Replied' },
   ]
 
   const filteredMessages = messages.filter(message =>

@@ -1,15 +1,25 @@
 'use client'
 
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import {
+  getBusinessPublicUrl,
+  type BusinessSlug,
+} from '@/data/businesses'
 
-const businesses = [
+const businesses: Array<{
+  slug: BusinessSlug
+  title: string
+  meta: string
+  description: string
+  image: string
+  details: string[]
+}> = [
   {
+    slug: 'studios',
     title: 'Minim Studios',
     meta: 'Media / Production / Events',
     description: 'Explore our professional studio services',
     image: '/images/Hero-1.jpg',
-    link: '/businesses/studios',
     details: [
       'Photography',
       'Videography',
@@ -20,12 +30,12 @@ const businesses = [
     ],
   },
   {
+    slug: 'food',
     title: 'Minim Food',
     meta: 'Catering / Hospitality',
     description:
       'Catering, restaurant operations, and food service solutions delivering quality and reliability for everyday and special occasions.',
     image: '/images/Hero-3.jpg',
-    link: '/businesses/food',
     details: [
       'Restaurant Operations',
       'Catering Services',
@@ -36,12 +46,12 @@ const businesses = [
     ],
   },
   {
+    slug: 'architect',
     title: 'Minim Architect Designers & Engineers',
     meta: 'Construction / Design',
     description:
       'Explore our architectural services and discover how we can bring your vision to life.',
     image: '/images/Hero-4.jpg',
-    link: '/businesses/architect',
     details: [
       'Residential Design',
       'Construction',
@@ -52,12 +62,12 @@ const businesses = [
     ],
   },
   {
+    slug: 'clothing',
     title: 'Minim Clothing',
     meta: 'Fashion / Apparel',
     description:
       'Fashion design, family clothing, corporate wear, and custom apparel solutions.',
     image: '/images/Hero-5.jpg',
-    link: '/businesses/clothing',
     details: [
       'Family',
       'Batch',
@@ -88,31 +98,34 @@ export default function BusinessDivisions() {
       <section className="dp-biz-list">
         <div className="ahs-container">
           <div className="dp-biz-stack">
-            {businesses.map((biz, index) => (
-              <article
-                key={biz.title}
-                className={`dp-biz-item ${index % 2 === 1 ? 'is-reverse' : ''}`}
-              >
-                <div
-                  className="dp-biz-media"
-                  style={{ backgroundImage: `url('${biz.image}')` }}
-                />
-                <div className="dp-biz-copy">
-                  <p className="dp-biz-meta">{biz.meta}</p>
-                  <h3 className="ahs-heading">{biz.title}</h3>
-                  <p className="ahs-body">{biz.description}</p>
-                  <ul className="dp-feature-list">
-                    {biz.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
-                  <Link href={biz.link} className="ahs-btn">
-                    <span className="ahs-btn-text">Learn More</span>
-                    <ArrowRight size={16} className="ahs-btn-icon" />
-                  </Link>
-                </div>
-              </article>
-            ))}
+            {businesses.map((biz, index) => {
+              const href = getBusinessPublicUrl(biz.slug)
+              return (
+                <article
+                  key={biz.title}
+                  className={`dp-biz-item ${index % 2 === 1 ? 'is-reverse' : ''}`}
+                >
+                  <div
+                    className="dp-biz-media"
+                    style={{ backgroundImage: `url('${biz.image}')` }}
+                  />
+                  <div className="dp-biz-copy">
+                    <p className="dp-biz-meta">{biz.meta}</p>
+                    <h3 className="ahs-heading">{biz.title}</h3>
+                    <p className="ahs-body">{biz.description}</p>
+                    <ul className="dp-feature-list">
+                      {biz.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                    <a href={href} className="ahs-btn">
+                      <span className="ahs-btn-text">Learn More</span>
+                      <ArrowRight size={16} className="ahs-btn-icon" />
+                    </a>
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>

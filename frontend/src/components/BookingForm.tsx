@@ -105,13 +105,12 @@ export default function BookingForm({ service }: BookingFormProps) {
               onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent"
             >
-              <option value="">Select a service</option>
-              <option value="photography">Photography</option>
-              <option value="videography">Videography</option>
-              <option value="audio">Audio Production</option>
-              <option value="event">Event Planning</option>
-              <option value="advertisement">Advertisement</option>
-              <option value="jazz">Live Jazz Band</option>
+              <option value="">Select a studio</option>
+              <option value="photography">Photography Studio</option>
+              <option value="videography">Videography Studio</option>
+              <option value="sound">Sound Studio</option>
+              <option value="displays">Displays Studio</option>
+              <option value="design">Design Studio</option>
             </select>
           </div>
 

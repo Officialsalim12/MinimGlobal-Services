@@ -79,15 +79,6 @@ export default function StudiosServices() {
   return (
     <section className="dh-impact dp-section">
       <div className="dh-container">
-        <div className="dh-section-head dh-section-head-center">
-          <h2 className="dh-section-title">Studio Services</h2>
-          <p className="dh-section-sub">
-            Explore our professional studio services
-          </p>
-          <span className="ahs-underline" aria-hidden="true">
-            <span />
-          </span>
-        </div>
         <div className="dh-impact-grid">
           {services.map((service) => {
             const Icon = service.icon

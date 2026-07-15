@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import {
   Megaphone,
   Calendar,
@@ -10,43 +9,44 @@ import {
   Music,
   ArrowRight,
 } from 'lucide-react'
+import { getBusinessPublicUrl } from '@/data/businesses'
 
 const impactAreas = [
   {
     icon: Megaphone,
     title: 'Media Consultancy',
     description: 'Expert guidance in media strategies and branding.',
-    link: '/businesses/studios',
+    getLink: () => getBusinessPublicUrl('studios'),
   },
   {
     icon: Calendar,
     title: 'Event Planning',
     description: 'Organizing and managing events with precision.',
-    link: '/businesses/studios',
+    getLink: () => getBusinessPublicUrl('studios'),
   },
   {
     icon: Newspaper,
     title: 'Advertisement',
     description: 'Boost your brand visibility through strategic ads.',
-    link: '/media',
+    getLink: () => getBusinessPublicUrl('studios'),
   },
   {
     icon: DollarSign,
     title: 'Track Your Expenditure',
     description: 'Monitor and manage your finances effectively.',
-    link: '/businesses/architect',
+    getLink: () => getBusinessPublicUrl('architect'),
   },
   {
     icon: Radio,
     title: 'Live Streaming',
     description: 'Broadcast events in real time with high quality.',
-    link: '/media',
+    getLink: () => getBusinessPublicUrl('studios'),
   },
   {
     icon: Music,
     title: 'Live Jazz Band',
     description: 'Experience live jazz music for special occasions.',
-    link: '/businesses/studios',
+    getLink: () => getBusinessPublicUrl('studios'),
   },
 ]
 
@@ -75,10 +75,10 @@ export default function ImpactSection() {
                   <p className="dh-impact-desc">{area.description}</p>
                 </div>
                 <div className="dh-impact-btn-wrap">
-                  <Link href={area.link} className="dh-impact-btn">
+                  <a href={area.getLink()} className="dh-impact-btn">
                     Read More
                     <ArrowRight size={16} />
-                  </Link>
+                  </a>
                 </div>
               </div>
             )

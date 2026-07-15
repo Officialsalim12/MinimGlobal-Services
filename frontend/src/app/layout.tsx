@@ -1,12 +1,9 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import ReduxProvider from '@/components/ReduxProvider'
 import { Toaster } from 'react-hot-toast'
 import PageLoader from '@/components/PageLoader'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Home Minim Global Services',
@@ -20,7 +17,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#110c5b',
+  themeColor: '#001F3F',
 }
 
 export default function RootLayout({
@@ -30,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <ReduxProvider>
           <ThemeProvider>
             <PageLoader />

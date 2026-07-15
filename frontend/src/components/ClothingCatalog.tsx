@@ -76,14 +76,6 @@ export default function ClothingCatalog() {
   return (
     <section className="dp-section">
       <div className="dh-container">
-        <div className="dh-section-head dh-section-head-center">
-          <h2 className="dh-section-title">Minim Clothing</h2>
-          <p className="dh-section-sub">{activeBlurb}</p>
-          <span className="ahs-underline" aria-hidden="true">
-            <span />
-          </span>
-        </div>
-
         <div className="dp-filter-row">
           <button
             type="button"
@@ -105,6 +97,12 @@ export default function ClothingCatalog() {
             </button>
           ))}
         </div>
+
+        {selectedCategory !== 'all' && activeBlurb && (
+          <p className="dh-section-sub" style={{ textAlign: 'center', marginBottom: 28 }}>
+            {activeBlurb}
+          </p>
+        )}
 
         <div className="dp-product-grid">
           {filteredProducts.map((product) => (

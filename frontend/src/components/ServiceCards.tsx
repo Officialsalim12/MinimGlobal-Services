@@ -2,39 +2,49 @@
 
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import {
+  getBusinessPublicUrl,
+  type BusinessSlug,
+} from '@/data/businesses'
 
-const businesses = [
+const businesses: Array<{
+  slug: BusinessSlug
+  title: string
+  meta: string
+  description: string
+  image: string
+}> = [
   {
+    slug: 'studios',
     title: 'Minim Studios',
     meta: 'Media / Production / Events',
     description:
       'Photography, videography, live streaming, and creative production that amplify brands and community stories.',
     image: '/images/Hero-1.jpg',
-    link: '/businesses/studios',
   },
   {
+    slug: 'food',
     title: 'Minim Food',
     meta: 'Catering / Hospitality',
     description:
       'Catering, restaurant operations, and food service solutions delivering quality and reliability every day.',
     image: '/images/Hero-3.jpg',
-    link: '/businesses/food',
   },
   {
+    slug: 'architect',
     title: 'Minim Architect',
     meta: 'Construction / Design',
     description:
       'Architecture, engineering, and project management building durable spaces across Sierra Leone.',
     image: '/images/Hero-4.jpg',
-    link: '/businesses/architect',
   },
   {
+    slug: 'clothing',
     title: 'Minim Clothing',
     meta: 'Fashion / Apparel',
     description:
       'Corporate wear, family clothing, and custom apparel designed with local craft and contemporary style.',
     image: '/images/Hero-5.jpg',
-    link: '/businesses/clothing',
   },
 ]
 
@@ -55,30 +65,33 @@ export default function ServiceCards() {
       </div>
 
       <div className="dh-biz-row">
-        {businesses.map((biz) => (
-          <article key={biz.title} className="dh-biz-card">
-            <div
-              className="dh-biz-image"
-              style={{ backgroundImage: `url('${biz.image}')` }}
-            />
-            <div className="dh-biz-body">
-              <div className="dh-biz-top">
-                <h3 className="dh-biz-title">
-                  <Link href={biz.link}>{biz.title}</Link>
-                </h3>
-                <p className="dh-biz-meta">{biz.meta}</p>
+        {businesses.map((biz) => {
+          const href = getBusinessPublicUrl(biz.slug)
+          return (
+            <article key={biz.title} className="dh-biz-card">
+              <div
+                className="dh-biz-image"
+                style={{ backgroundImage: `url('${biz.image}')` }}
+              />
+              <div className="dh-biz-body">
+                <div className="dh-biz-top">
+                  <h3 className="dh-biz-title">
+                    <a href={href}>{biz.title}</a>
+                  </h3>
+                  <p className="dh-biz-meta">{biz.meta}</p>
+                </div>
+                <div className="dh-biz-bottom">
+                  <span className="dh-biz-rule" />
+                  <p className="dh-biz-desc">{biz.description}</p>
+                  <a href={href} className="ahs-btn dh-biz-btn">
+                    <span className="ahs-btn-text">Read More</span>
+                    <ArrowRight size={16} className="ahs-btn-icon" />
+                  </a>
+                </div>
               </div>
-              <div className="dh-biz-bottom">
-                <span className="dh-biz-rule" />
-                <p className="dh-biz-desc">{biz.description}</p>
-                <Link href={biz.link} className="ahs-btn dh-biz-btn">
-                  <span className="ahs-btn-text">Read More</span>
-                  <ArrowRight size={16} className="ahs-btn-icon" />
-                </Link>
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          )
+        })}
       </div>
 
       <div className="dh-container">

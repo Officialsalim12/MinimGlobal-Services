@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
@@ -15,7 +16,7 @@ export default function ClothingOrderForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    toast.success('Order submitted successfully!')
+    toast.success('Message sent. We will get back to you shortly.')
     setFormData({
       name: '',
       email: '',
@@ -28,122 +29,87 @@ export default function ClothingOrderForm() {
   }
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Place Your Order</h2>
-          <p className="section-subtitle">Custom clothing orders and inquiries</p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="card p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-text-dark mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="John Doe"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-text-dark mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="john@example.com"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-text-dark mb-2">
-                Phone Number *
-              </label>
-              <input
-                type="tel"
-                required
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="+232 XX XXX XXX"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-text-dark mb-2">
-                Delivery Address *
-              </label>
-              <input
-                type="text"
-                required
-                value={formData.address}
-                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="Your delivery address"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-text-dark mb-2">
-                Items to Order *
-              </label>
-              <textarea
-                rows={3}
-                required
-                value={formData.items}
-                onChange={(e) => setFormData({ ...formData, items: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="List the items you want to order..."
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-text-dark mb-2">
-                Sizes *
-              </label>
-              <textarea
-                rows={3}
-                required
-                value={formData.sizes}
-                onChange={(e) => setFormData({ ...formData, sizes: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="Specify sizes for each item..."
-              />
-            </div>
-          </div>
-
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-text-dark mb-2">
-              Special Requests
-            </label>
-            <textarea
-              rows={3}
-              value={formData.specialRequests}
-              onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              placeholder="Any customizations or special instructions..."
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold"
-          >
-            Place Order
-          </button>
-        </form>
+    <form className="mc-form" onSubmit={handleSubmit}>
+      <div className="mc-form-row">
+        <label>
+          Full Name *
+          <input
+            type="text"
+            required
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            placeholder="John Doe"
+          />
+        </label>
+        <label>
+          Email *
+          <input
+            type="email"
+            required
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="john@example.com"
+          />
+        </label>
       </div>
-    </section>
+      <div className="mc-form-row">
+        <label>
+          Phone Number *
+          <input
+            type="tel"
+            required
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            placeholder="+232 XX XXX XXX"
+          />
+        </label>
+        <label>
+          Delivery Address *
+          <input
+            type="text"
+            required
+            value={formData.address}
+            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+            placeholder="Your delivery address"
+          />
+        </label>
+      </div>
+      <div className="mc-form-row">
+        <label>
+          Items to Order *
+          <textarea
+            rows={3}
+            required
+            value={formData.items}
+            onChange={(e) => setFormData({ ...formData, items: e.target.value })}
+            placeholder="List the items you want to order..."
+          />
+        </label>
+        <label>
+          Sizes *
+          <textarea
+            rows={3}
+            required
+            value={formData.sizes}
+            onChange={(e) => setFormData({ ...formData, sizes: e.target.value })}
+            placeholder="Specify sizes for each item..."
+          />
+        </label>
+      </div>
+      <label>
+        Special Requests
+        <textarea
+          rows={3}
+          value={formData.specialRequests}
+          onChange={(e) =>
+            setFormData({ ...formData, specialRequests: e.target.value })
+          }
+          placeholder="Any customizations or special instructions..."
+        />
+      </label>
+      <button type="submit" className="mc-btn mc-btn-primary">
+        Send Message
+      </button>
+    </form>
   )
 }

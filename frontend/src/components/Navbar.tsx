@@ -33,14 +33,12 @@ export default function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/businesses', label: 'Our Businesses' },
     { href: '/about', label: 'About Us', hasDropdown: true },
-    { href: '/media', label: 'Media' },
     { href: '/contact', label: 'Contact' },
   ]
 
   const aboutSubLinks = [
     { href: '/about/history', label: 'History, Mission & Vision' },
     { href: '/about/leadership', label: 'Executive Leadership' },
-    { href: '/about/team', label: 'Meet the Team' },
   ]
 
   return (

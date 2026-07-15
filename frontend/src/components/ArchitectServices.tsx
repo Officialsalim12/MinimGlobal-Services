@@ -89,16 +89,6 @@ export default function ArchitectServices() {
   return (
     <section className="dh-impact dp-section">
       <div className="dh-container">
-        <div className="dh-section-head dh-section-head-center">
-          <h2 className="dh-section-title">Our Services</h2>
-          <p className="dh-section-sub">
-            Explore our architectural services and discover how we can bring
-            your vision to life.
-          </p>
-          <span className="ahs-underline" aria-hidden="true">
-            <span />
-          </span>
-        </div>
         <div className="dh-impact-grid">
           {services.map((service) => {
             const Icon = service.icon
