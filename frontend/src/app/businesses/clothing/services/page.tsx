@@ -32,7 +32,7 @@ export default function ClothingServicesPage() {
               <div>
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
-                <a href="/shop" className="mc-btn mc-btn-dark">
+                <a href="/businesses/clothing/shop" className="mc-btn mc-btn-dark">
                   Shop Online
                 </a>
               </div>

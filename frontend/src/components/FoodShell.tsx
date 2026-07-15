@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ShoppingCart } from 'lucide-react'
-import { getApexPublicUrl } from '@/data/businesses'
+import { getApexPublicUrl, getDivisionHref } from '@/data/businesses'
 import { FOOD_NAV } from '@/data/food'
 import { useFoodCart } from '@/components/FoodCartContext'
 import FoodCartDrawer from '@/components/FoodCartDrawer'
@@ -14,6 +14,7 @@ export default function FoodShell({ children }: { children: React.ReactNode }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const apexUrl = getApexPublicUrl()
+  const href = (path: string) => getDivisionHref('food', path, pathname)
   const { itemCount, openCart } = useFoodCart()
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function FoodShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         <div className="mf-nav-inner">
-          <a href="/" className="mf-nav-logo" onClick={() => setMenuOpen(false)}>
+          <a href={href('/')} className="mf-nav-logo" onClick={() => setMenuOpen(false)}>
             <Image
               src="/images/logo.png"
               alt="Minim Food"
@@ -62,7 +63,7 @@ export default function FoodShell({ children }: { children: React.ReactNode }) {
             {FOOD_NAV.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={href(link.href)}
                 className={`mf-nav-link ${
                   publicPath === link.href ||
                   (link.href !== '/' && publicPath.startsWith(link.href))
@@ -99,7 +100,7 @@ export default function FoodShell({ children }: { children: React.ReactNode }) {
 
         <div className={`mf-nav-mobile ${menuOpen ? 'is-open' : ''}`}>
           {FOOD_NAV.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            <a key={link.href} href={href(link.href)} onClick={() => setMenuOpen(false)}>
               {link.label}
             </a>
           ))}

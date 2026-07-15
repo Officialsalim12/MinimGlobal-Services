@@ -1,4 +1,4 @@
-﻿import StudiosPageHero from '@/components/StudiosPageHero'
+import StudiosPageHero from '@/components/StudiosPageHero'
 import {
   Camera,
   Package,
@@ -126,7 +126,7 @@ export default function PhotographyPage() {
         title="Professional Imagery To Grow Your Company"
         subtitle="Commercial photography for brands, products, events, and spaces delivered on time."
         image="/images/Hero-1.jpg"
-        ctaHref="/contact"
+        ctaHref="/businesses/studios/contact"
         ctaLabel="Get in Touch"
         secondaryHref="#services"
         secondaryLabel="See Our Services"
@@ -135,7 +135,7 @@ export default function PhotographyPage() {
       <section className="ms-intro">
         <div className="ms-container ms-intro-grid">
           <h2>
-            You Need Awesome Imagery. And You Need It Like…Yesterday. We Get It.
+            You Need Awesome Imagery. And You Need It Like�Yesterday. We Get It.
           </h2>
           <div>
             <p>
@@ -144,7 +144,7 @@ export default function PhotographyPage() {
               what you need, on time.
             </p>
             <div className="ms-hero-actions ms-intro-actions">
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Get in Touch
               </a>
               <a href="#services" className="ms-btn ms-btn-outline">
@@ -173,7 +173,7 @@ export default function PhotographyPage() {
               accomplishes your marketing goals and stays totally on brand.
             </p>
           </div>
-          <a href="/contact" className="ms-btn ms-btn-primary">
+          <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
             Inquire for a Quote
           </a>
         </div>
@@ -205,7 +205,7 @@ export default function PhotographyPage() {
                   </li>
                 ))}
               </ul>
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Inquire for a Quote
               </a>
             </div>
@@ -235,7 +235,7 @@ export default function PhotographyPage() {
                   </li>
                 ))}
               </ul>
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Inquire for a Quote
               </a>
             </div>
@@ -259,7 +259,7 @@ export default function PhotographyPage() {
                   </div>
                   <h3>{card.title}</h3>
                   <p>{card.description}</p>
-                  <a href="/contact" className="ms-text-link">
+                  <a href="/businesses/studios/contact" className="ms-text-link">
                     Learn More
                   </a>
                 </article>
@@ -293,7 +293,7 @@ export default function PhotographyPage() {
                 </li>
               ))}
             </ul>
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Schedule a Session
             </a>
           </div>
@@ -308,7 +308,7 @@ export default function PhotographyPage() {
           </div>
           <div className="ms-cases-grid">
             {samples.map((item) => (
-              <a key={item.title} href="/contact" className="ms-case-card">
+              <a key={item.title} href="/businesses/studios/contact" className="ms-case-card">
                 <div
                   className="ms-case-image"
                   style={{ backgroundImage: `url('${item.image}')` }}
@@ -352,7 +352,7 @@ export default function PhotographyPage() {
               availability and a clear next step.
             </p>
           </div>
-          <a href="/contact" className="ms-btn ms-btn-primary">
+          <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
             Book Photography
           </a>
         </div>

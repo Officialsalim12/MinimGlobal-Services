@@ -123,7 +123,7 @@ export default function ClothingCatalog() {
         </div>
 
         <div className="ahs-team-cta">
-          <Link href="/contact" className="ahs-btn">
+          <Link href="/businesses/clothing/contact" className="ahs-btn">
             <span className="ahs-btn-text">Contact Us</span>
           </Link>
         </div>

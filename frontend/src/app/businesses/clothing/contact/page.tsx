@@ -16,7 +16,7 @@ export default function ClothingContactPage() {
             with sizes, branding, or delivery.
           </p>
           <div className="mc-hero-actions">
-            <a href="/shop" className="mc-btn mc-btn-primary">
+            <a href="/businesses/clothing/shop" className="mc-btn mc-btn-primary">
               Shop Online
             </a>
           </div>

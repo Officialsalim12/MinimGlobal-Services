@@ -93,7 +93,7 @@ export default function ArchitectServicePage({ service }: Props) {
               Speak with Minim Architect about scope, timeline, and how full service
               delivery can support your build.
             </p>
-            <a href="/contact" className="ma-btn ma-btn-primary">
+            <a href="/businesses/architect/contact" className="ma-btn ma-btn-primary">
               Request a Consultation
             </a>
           </div>

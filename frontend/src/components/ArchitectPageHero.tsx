@@ -12,7 +12,7 @@ export default function ArchitectPageHero({
   title,
   subtitle,
   image = '/images/Hero-4.jpg',
-  ctaHref = '/contact',
+  ctaHref = '/businesses/architect/contact',
   ctaLabel = 'Request a Consultation',
 }: Props) {
   return (
@@ -26,7 +26,7 @@ export default function ArchitectPageHero({
           <a href={ctaHref} className="ma-btn ma-btn-primary">
             {ctaLabel}
           </a>
-          <a href="/portfolio" className="ma-btn ma-btn-ghost">
+          <a href="/businesses/architect/portfolio" className="ma-btn ma-btn-ghost">
             View Portfolio
           </a>
         </div>

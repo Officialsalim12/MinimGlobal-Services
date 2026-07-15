@@ -1,4 +1,4 @@
-ï»¿import StudiosPageHero from '@/components/StudiosPageHero'
+import StudiosPageHero from '@/components/StudiosPageHero'
 import { PenTool, Palette, Type, LayoutTemplate, Package, Smartphone } from 'lucide-react'
 
 const offerings = [
@@ -60,10 +60,10 @@ export default function DesignStudioPage() {
               screens, and beside photography and video from our other studios.
             </p>
             <div className="ms-hero-actions ms-intro-actions">
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Start a Design Project
               </a>
-              <a href="/contact" className="ms-btn ms-btn-outline">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-outline">
                 Get in Touch
               </a>
             </div>
@@ -87,7 +87,7 @@ export default function DesignStudioPage() {
                   </div>
                   <h3>{card.title}</h3>
                   <p>{card.description}</p>
-                  <a href="/contact" className="ms-text-link">
+                  <a href="/businesses/studios/contact" className="ms-text-link">
                     Inquire
                   </a>
                 </article>
@@ -100,16 +100,16 @@ export default function DesignStudioPage() {
       <section className="ms-cta ms-cta-compact">
         <div className="ms-container ms-section-head ms-section-head-center">
           <p className="ms-eyebrow">Get in touch</p>
-          <h2>Letâ€™s Design Something Strong</h2>
+          <h2>Let’s Design Something Strong</h2>
           <p>
-            Tell us about your brand or campaign and weâ€™ll help shape the
+            Tell us about your brand or campaign and we’ll help shape the
             visuals.
           </p>
           <div
             className="ms-hero-actions"
             style={{ justifyContent: 'center', marginTop: 24 }}
           >
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Get in Touch
             </a>
           </div>

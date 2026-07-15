@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ShoppingCart } from 'lucide-react'
-import { getApexPublicUrl } from '@/data/businesses'
+import { getApexPublicUrl, getDivisionHref } from '@/data/businesses'
 import { CLOTHING_NAV, CLOTHING_PROMO } from '@/data/clothing'
 import { useClothingCart } from '@/components/ClothingCartContext'
 import ClothingCartDrawer from '@/components/ClothingCartDrawer'
@@ -14,6 +14,7 @@ export default function ClothingShell({ children }: { children: React.ReactNode 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const apexUrl = getApexPublicUrl()
+  const href = (path: string) => getDivisionHref('clothing', path, pathname)
   const { itemCount, openCart } = useClothingCart()
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export default function ClothingShell({ children }: { children: React.ReactNode 
           </div>
         </div>
         <div className="mc-nav-inner">
-          <a href="/" className="mc-nav-logo" onClick={() => setMenuOpen(false)}>
+          <a href={href('/')} className="mc-nav-logo" onClick={() => setMenuOpen(false)}>
             <Image
               src="/images/logo.png"
               alt="Minim Clothing"
@@ -71,7 +72,7 @@ export default function ClothingShell({ children }: { children: React.ReactNode 
             {CLOTHING_NAV.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={href(link.href)}
                 className={`mc-nav-link ${isActive(link.href) ? 'is-active' : ''}`}
               >
                 {link.label}
@@ -103,7 +104,7 @@ export default function ClothingShell({ children }: { children: React.ReactNode 
 
         <div className={`mc-nav-mobile ${menuOpen ? 'is-open' : ''}`}>
           {CLOTHING_NAV.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            <a key={link.href} href={href(link.href)} onClick={() => setMenuOpen(false)}>
               {link.label}
             </a>
           ))}
@@ -137,7 +138,7 @@ export default function ClothingShell({ children }: { children: React.ReactNode 
             <ul>
               {CLOTHING_NAV.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
+                  <a href={href(link.href)}>{link.label}</a>
                 </li>
               ))}
             </ul>
@@ -146,16 +147,16 @@ export default function ClothingShell({ children }: { children: React.ReactNode 
             <h4>Shop Online</h4>
             <ul>
               <li>
-                <a href="/shop">All Products</a>
+                <a href={href('/shop')}>All Products</a>
               </li>
               <li>
-                <a href="/services">Services</a>
+                <a href={href('/services')}>Services</a>
               </li>
               <li>
-                <a href="/team">Team</a>
+                <a href={href('/team')}>Team</a>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <a href={href('/contact')}>Contact</a>
               </li>
             </ul>
           </div>

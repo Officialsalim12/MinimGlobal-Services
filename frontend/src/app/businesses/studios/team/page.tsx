@@ -1,4 +1,4 @@
-﻿import StudiosPageHero from '@/components/StudiosPageHero'
+import StudiosPageHero from '@/components/StudiosPageHero'
 import { studiosTeam } from '@/data/studios-team'
 
 export default function StudiosTeamPage() {
@@ -9,7 +9,7 @@ export default function StudiosTeamPage() {
         title="The People Behind Minim Studios"
         subtitle="Photographers, filmmakers, sound engineers, lighting techs, and designers the staff who bring every project to life."
         image="/images/Hero-3.jpg"
-        ctaHref="/contact"
+        ctaHref="/businesses/studios/contact"
         ctaLabel="Work With Us"
       />
 
@@ -20,7 +20,7 @@ export default function StudiosTeamPage() {
             <h2>Meet the Studio Team</h2>
             <p className="ms-team-intro">
               These are the people you work with across our five studios. Reach
-              out and we’ll connect you with the right specialist for your
+              out and we�ll connect you with the right specialist for your
               project.
             </p>
           </div>
@@ -53,14 +53,14 @@ export default function StudiosTeamPage() {
           <p className="ms-eyebrow">Join or collaborate</p>
           <h2>Want to Work With Our Team?</h2>
           <p>
-            Tell us about your project and we’ll match you with the right
+            Tell us about your project and we�ll match you with the right
             studio staff.
           </p>
           <div
             className="ms-hero-actions"
             style={{ justifyContent: 'center', marginTop: 24 }}
           >
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Get in Touch
             </a>
           </div>

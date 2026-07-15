@@ -16,10 +16,10 @@ export default function CateringPage() {
             with menus you can trust.
           </p>
           <div className="mf-hero-actions">
-            <a href="/contact" className="mf-btn mf-btn-primary">
+            <a href="/businesses/food/contact" className="mf-btn mf-btn-primary">
               Request a catering quote
             </a>
-            <a href="/shop" className="mf-btn mf-btn-ghost">
+            <a href="/businesses/food/shop" className="mf-btn mf-btn-ghost">
               Shop ready to go trays
             </a>
           </div>
@@ -50,7 +50,7 @@ export default function CateringPage() {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                  <a href="/contact" className="mf-btn mf-btn-dark">
+                  <a href="/businesses/food/contact" className="mf-btn mf-btn-dark">
                     Book this package
                   </a>
                 </div>
@@ -67,7 +67,7 @@ export default function CateringPage() {
             Tell us your date, guest count, and style. We will build a catering
             plan that fits your budget.
           </p>
-          <a href="/contact" className="mf-btn mf-btn-primary">
+          <a href="/businesses/food/contact" className="mf-btn mf-btn-primary">
             Talk to catering
           </a>
         </div>

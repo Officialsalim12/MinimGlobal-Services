@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { getApexPublicUrl } from '@/data/businesses'
+import { getApexPublicUrl, getDivisionHref } from '@/data/businesses'
 import { ARCHITECT_NAV } from '@/data/architect'
 
 export default function ArchitectShell({ children }: { children: React.ReactNode }) {
@@ -12,6 +12,7 @@ export default function ArchitectShell({ children }: { children: React.ReactNode
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const apexUrl = getApexPublicUrl()
+  const href = (path: string) => getDivisionHref('architect', path, pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -45,7 +46,7 @@ export default function ArchitectShell({ children }: { children: React.ReactNode
           </div>
         </div>
         <div className="ma-nav-inner">
-          <a href="/" className="ma-nav-logo" onClick={() => setMenuOpen(false)}>
+          <a href={href('/')} className="ma-nav-logo" onClick={() => setMenuOpen(false)}>
             <Image
               src="/images/logo.png"
               alt="Minim Architect"
@@ -60,7 +61,7 @@ export default function ArchitectShell({ children }: { children: React.ReactNode
             {ARCHITECT_NAV.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={href(link.href)}
                 className={`ma-nav-link ${isActive(link.href) ? 'is-active' : ''}`}
               >
                 {link.label}
@@ -81,7 +82,7 @@ export default function ArchitectShell({ children }: { children: React.ReactNode
 
         <div className={`ma-nav-mobile ${menuOpen ? 'is-open' : ''}`}>
           {ARCHITECT_NAV.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            <a key={link.href} href={href(link.href)} onClick={() => setMenuOpen(false)}>
               {link.label}
             </a>
           ))}

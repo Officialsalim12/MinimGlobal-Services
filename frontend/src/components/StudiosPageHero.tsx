@@ -14,7 +14,7 @@ export default function StudiosPageHero({
   title,
   subtitle,
   image = '/images/Hero-1.jpg',
-  ctaHref = '/contact',
+  ctaHref = '/businesses/studios/contact',
   ctaLabel = 'Get in Touch',
   secondaryHref,
   secondaryLabel,

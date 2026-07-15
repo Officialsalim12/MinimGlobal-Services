@@ -20,10 +20,10 @@ export default function MinimClothingHome() {
             occasion outfits, and family wear. Filter by category or search by name.
           </p>
           <div className="mc-hero-actions">
-            <a href="/shop" className="mc-btn mc-btn-primary">
+            <a href="/businesses/clothing/shop" className="mc-btn mc-btn-primary">
               Shop Online
             </a>
-            <a href="/services" className="mc-btn mc-btn-ghost">
+            <a href="/businesses/clothing/services" className="mc-btn mc-btn-ghost">
               Our Services
             </a>
           </div>
@@ -76,7 +76,7 @@ export default function MinimClothingHome() {
                 <div className="mc-service-body">
                   <h3>{service.title}</h3>
                   <p>{service.summary}</p>
-                  <a href="/services" className="mc-text-link">
+                  <a href="/businesses/clothing/services" className="mc-text-link">
                     Learn More
                   </a>
                 </div>
@@ -106,7 +106,7 @@ export default function MinimClothingHome() {
               across Sierra Leone. Order online for bulk stock, uniforms, special
               occasion wear, and matching family outfits.
             </p>
-            <a href="/team" className="mc-btn mc-btn-dark">
+            <a href="/businesses/clothing/team" className="mc-btn mc-btn-dark">
               Meet the Team
             </a>
           </div>
@@ -119,7 +119,7 @@ export default function MinimClothingHome() {
             <h2>Ready to buy online?</h2>
             <p>Open the store, filter what you need, and checkout from your cart.</p>
           </div>
-          <a href="/shop" className="mc-btn mc-btn-primary">
+          <a href="/businesses/clothing/shop" className="mc-btn mc-btn-primary">
             Start Shopping
           </a>
         </div>

@@ -20,11 +20,11 @@ export default function MinimFoodHome() {
             products online for delivery across Sierra Leone.
           </p>
           <div className="mf-hero-actions">
-            <a href="/catering" className="mf-btn mf-btn-primary">
+            <a href="/businesses/food/catering" className="mf-btn mf-btn-primary">
               <UtensilsCrossed size={16} />
               Book Catering
             </a>
-            <a href="/shop" className="mf-btn mf-btn-ghost">
+            <a href="/businesses/food/shop" className="mf-btn mf-btn-ghost">
               <ShoppingBag size={16} />
               Shop Products
             </a>
@@ -42,7 +42,7 @@ export default function MinimFoodHome() {
               prepares the food, and delivers on time with optional on site
               service.
             </p>
-            <a href="/catering" className="mf-btn mf-btn-dark">
+            <a href="/businesses/food/catering" className="mf-btn mf-btn-dark">
               View catering packages <ArrowRight size={16} />
             </a>
           </article>
@@ -53,7 +53,7 @@ export default function MinimFoodHome() {
               Buy party trays, drinks, spices, and pantry items online. Pay on
               delivery or arrange your preferred payment with our team.
             </p>
-            <a href="/shop" className="mf-btn mf-btn-primary">
+            <a href="/businesses/food/shop" className="mf-btn mf-btn-primary">
               Browse the shop <ArrowRight size={16} />
             </a>
           </article>
@@ -79,7 +79,7 @@ export default function MinimFoodHome() {
                   <p className="mf-meta">
                     {pack.guests} · from {formatLeones(pack.priceFrom)}
                   </p>
-                  <a href="/contact" className="mf-btn mf-btn-dark">
+                  <a href="/businesses/food/contact" className="mf-btn mf-btn-dark">
                     Request quote
                   </a>
                 </div>
@@ -96,7 +96,7 @@ export default function MinimFoodHome() {
               <p className="mf-label dark">Shop online</p>
               <h2>Featured products</h2>
             </div>
-            <a href="/shop" className="mf-text-link">
+            <a href="/businesses/food/shop" className="mf-text-link">
               View all products <ArrowRight size={16} />
             </a>
           </div>
@@ -135,7 +135,7 @@ export default function MinimFoodHome() {
             delivery across Freetown. Shop online and we confirm availability
             quickly.
           </p>
-          <a href="/shop" className="mf-btn mf-btn-primary">
+          <a href="/businesses/food/shop" className="mf-btn mf-btn-primary">
             Go to Shop
           </a>
         </div>

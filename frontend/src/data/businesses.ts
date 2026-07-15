@@ -77,6 +77,86 @@ export function getRootDomain(): string {
   return (process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'localhost').toLowerCase()
 }
 
+export function isLocalRootDomain(root = getRootDomain()): boolean {
+  return root === 'localhost' || root.endsWith('.localhost')
+}
+
+/** True when a real production domain is configured (not localhost). */
+export function hasConfiguredPublicDomain(root = getRootDomain()): boolean {
+  return Boolean(root) && !isLocalRootDomain(root)
+}
+
+/**
+ * Apex → subdomain redirects only for local `*.localhost` or when the
+ * request host matches a configured production root domain.
+ * Prevents `/businesses/studios` → `studios.localhost` on Vercel.
+ */
+export function shouldRedirectApexToSubdomain(hostHeader: string): boolean {
+  const host = hostHeader.split(':')[0].toLowerCase()
+  const root = getRootDomain()
+
+  if (host === 'localhost' || host === '127.0.0.1') return true
+
+  if (hasConfiguredPublicDomain(root)) {
+    return host === root || host === `www.${root}`
+  }
+
+  return false
+}
+
+/** Whether the current browser host should use subdomain public URLs. */
+export function shouldUseSubdomainPublicUrls(hostname?: string): boolean {
+  const host =
+    hostname ||
+    (typeof window !== 'undefined' ? window.location.hostname : '')
+  const root = getRootDomain()
+
+  if (!host) return hasConfiguredPublicDomain(root)
+
+  if (host === 'localhost' || host.endsWith('.localhost')) return true
+
+  if (hasConfiguredPublicDomain(root)) {
+    return (
+      host === root ||
+      host === `www.${root}` ||
+      host.endsWith(`.${root}`)
+    )
+  }
+
+  return false
+}
+
+/** Path on the apex site for a division route (`/businesses/studios/contact`). */
+export function getBusinessPath(slug: BusinessSlug, path = '/'): string {
+  const rest =
+    !path || path === '/'
+      ? ''
+      : path.startsWith('/')
+        ? path
+        : `/${path}`
+  return `/businesses/${slug}${rest}`
+}
+
+/**
+ * Division-relative href that works on both subdomain hosts and apex paths.
+ * Short paths (`/contact`) stay short on subdomains; get prefixed on apex.
+ */
+export function getDivisionHref(
+  slug: BusinessSlug,
+  path: string,
+  pathname?: string
+): string {
+  const current =
+    pathname ||
+    (typeof window !== 'undefined' ? window.location.pathname : '')
+  const onApexPath = current.startsWith(`/businesses/${slug}`)
+  if (onApexPath || !shouldUseSubdomainPublicUrls()) {
+    return getBusinessPath(slug, path)
+  }
+  if (!path || path === '/') return '/'
+  return path.startsWith('/') ? path : `/${path}`
+}
+
 export function getBusinessBySlug(slug: string): Business | undefined {
   return businesses.find((b) => b.slug === slug)
 }
@@ -91,6 +171,15 @@ export function getBusinessByHost(hostHeader: string): Business | undefined {
 
   if (host === root || host === `www.${root}`) return undefined
 
+  // Local: studios.localhost
+  if (host.endsWith('.localhost')) {
+    const sub = host.slice(0, -'.localhost'.length)
+    if (!sub || sub.includes('.')) return undefined
+    return getBusinessBySubdomain(sub)
+  }
+
+  if (!hasConfiguredPublicDomain(root)) return undefined
+
   const suffix = `.${root}`
   if (!host.endsWith(suffix)) return undefined
 
@@ -102,22 +191,30 @@ export function getBusinessByHost(hostHeader: string): Business | undefined {
 
 function buildOrigin(subOrHost: string, port?: string): string {
   const root = getRootDomain()
-  const isLocal = root === 'localhost' || root.endsWith('.localhost')
+  const isLocal = isLocalRootDomain(root)
   const protocol = isLocal ? 'http' : 'https'
   const portSuffix =
     port && port !== '80' && port !== '443' ? `:${port}` : isLocal ? ':3000' : ''
   return `${protocol}://${subOrHost}${portSuffix}`
 }
 
-/** Public shareable URL for a division (subdomain). */
+/** Public shareable URL for a division (subdomain when available, else path). */
 export function getBusinessPublicUrl(slug: BusinessSlug, requestPort?: string): string {
   const biz = getBusinessBySlug(slug)
   if (!biz) return `/businesses/${slug}`
 
   if (typeof window !== 'undefined') {
+    if (!shouldUseSubdomainPublicUrls(window.location.hostname)) {
+      return getBusinessPath(slug)
+    }
     const { protocol, port } = window.location
     const portSuffix = port && port !== '80' && port !== '443' ? `:${port}` : ''
     return `${protocol}//${biz.subdomain}.${getRootDomain()}${portSuffix}`
+  }
+
+  // SSR / build: prefer apex paths unless a real public domain is configured
+  if (!hasConfiguredPublicDomain()) {
+    return getBusinessPath(slug)
   }
 
   return buildOrigin(`${biz.subdomain}.${getRootDomain()}`, requestPort)
@@ -127,9 +224,25 @@ export function getApexPublicUrl(requestPort?: string): string {
   const root = getRootDomain()
 
   if (typeof window !== 'undefined') {
-    const { protocol, port } = window.location
+    const { protocol, hostname, port } = window.location
     const portSuffix = port && port !== '80' && port !== '443' ? `:${port}` : ''
-    return `${protocol}//${root}${portSuffix}`
+    const business = getBusinessByHost(hostname)
+
+    if (business) {
+      if (isLocalRootDomain(root)) {
+        return `${protocol}//localhost${portSuffix}`
+      }
+      if (hasConfiguredPublicDomain(root)) {
+        return `${protocol}//${root}${portSuffix}`
+      }
+    }
+
+    // Already on apex (e.g. *.vercel.app) — stay on this host
+    return `${protocol}//${hostname}${portSuffix}`
+  }
+
+  if (!hasConfiguredPublicDomain(root)) {
+    return '/'
   }
 
   return buildOrigin(root, requestPort)

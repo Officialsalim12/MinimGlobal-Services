@@ -1,4 +1,4 @@
-ï»¿'use client'
+'use client'
 
 import { useEffect, useState } from 'react'
 import {
@@ -68,10 +68,10 @@ export default function MinimStudiosHome() {
             creative services under one roof.
           </p>
           <div className="ms-hero-actions">
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Get in Touch
             </a>
-            <a href="/photography" className="ms-btn ms-btn-ghost">
+            <a href="/businesses/studios/photography" className="ms-btn ms-btn-ghost">
               Explore Our Studios
             </a>
           </div>
@@ -88,10 +88,10 @@ export default function MinimStudiosHome() {
               and to a professional standard.
             </p>
             <div className="ms-hero-actions ms-intro-actions">
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Get in Touch
               </a>
-              <a href="/team" className="ms-btn ms-btn-outline">
+              <a href="/businesses/studios/team" className="ms-btn ms-btn-outline">
                 Meet the Team
               </a>
             </div>
@@ -152,19 +152,19 @@ export default function MinimStudiosHome() {
       <section className="ms-cta ms-cta-compact">
         <div className="ms-container ms-section-head ms-section-head-center">
           <p className="ms-eyebrow">Get in touch</p>
-          <h2>Letâ€™s Get Started!</h2>
+          <h2>Let’s Get Started!</h2>
           <p>
             Tell us which studio you need photography, video, sound, displays,
-            or design and weâ€™ll take it from there.
+            or design and we’ll take it from there.
           </p>
           <div
             className="ms-hero-actions"
             style={{ justifyContent: 'center', marginTop: 24 }}
           >
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Get in Touch
             </a>
-            <a href="/team" className="ms-btn ms-btn-ghost">
+            <a href="/businesses/studios/team" className="ms-btn ms-btn-ghost">
               Meet the Team
             </a>
           </div>

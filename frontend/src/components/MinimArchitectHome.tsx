@@ -19,10 +19,10 @@ export default function MinimArchitectHome() {
             <p className="ma-lead">{ARCHITECT_LEAD}</p>
             <p>{ARCHITECT_INTRO}</p>
             <div className="ma-hero-actions ma-intro-actions">
-              <a href="/services" className="ma-btn ma-btn-primary">
+              <a href="/businesses/architect/services" className="ma-btn ma-btn-primary">
                 Explore Services
               </a>
-              <a href="/portfolio" className="ma-btn ma-btn-outline">
+              <a href="/businesses/architect/portfolio" className="ma-btn ma-btn-outline">
                 View Portfolio
               </a>
             </div>
@@ -71,13 +71,13 @@ export default function MinimArchitectHome() {
               <p className="ma-label dark">Selected Works</p>
               <h2>Portfolio</h2>
             </div>
-            <a href="/portfolio" className="ma-text-link">
+            <a href="/businesses/architect/portfolio" className="ma-text-link">
               View all projects
             </a>
           </div>
           <div className="ma-portfolio-grid">
             {featured.map((item) => (
-              <a key={item.id} href="/portfolio" className="ma-portfolio-card">
+              <a key={item.id} href="/businesses/architect/portfolio" className="ma-portfolio-card">
                 <div
                   className="ma-portfolio-image"
                   style={{ backgroundImage: `url('${item.image}')` }}
@@ -102,7 +102,7 @@ export default function MinimArchitectHome() {
               discuss feasibility and next steps.
             </p>
           </div>
-          <a href="/contact" className="ma-btn ma-btn-primary">
+          <a href="/businesses/architect/contact" className="ma-btn ma-btn-primary">
             Get in Touch
           </a>
         </div>

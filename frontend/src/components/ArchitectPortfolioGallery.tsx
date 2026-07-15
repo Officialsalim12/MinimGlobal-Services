@@ -34,7 +34,7 @@ export default function ArchitectPortfolioGallery() {
         title="Portfolio"
         subtitle="Residential, commercial, and institutional projects across Freetown and Sierra Leone."
         image="/images/Hero-3.jpg"
-        ctaHref="/contact"
+        ctaHref="/businesses/architect/contact"
         ctaLabel="Start a Project"
       />
 

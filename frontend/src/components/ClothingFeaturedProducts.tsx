@@ -19,7 +19,7 @@ export default function ClothingFeaturedProducts({ limit = 6 }: Props) {
     <div className="mc-product-block">
       <div className="mc-product-block-head">
         <h2>Featured</h2>
-        <a href="/shop" className="mc-text-link">
+        <a href="/businesses/clothing/shop" className="mc-text-link">
           View All
         </a>
       </div>

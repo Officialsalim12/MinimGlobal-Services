@@ -4,6 +4,7 @@ import {
   getBusinessByHost,
   getBusinessBySlug,
   getRootDomain,
+  shouldRedirectApexToSubdomain,
   type BusinessSlug,
 } from '@/data/businesses'
 import { isStudiosPublicPath } from '@/data/studios'
@@ -65,10 +66,15 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const business = getBusinessByHost(host)
 
-  // Apex: redirect /businesses/{slug}[/...] to the matching subdomain
+  // Apex: redirect /businesses/{slug}[/...] to subdomain when routing is enabled
+  // (local *.localhost, or configured production domain). Skip on *.vercel.app.
   if (!business) {
     const match = pathname.match(/^\/businesses\/([^/]+)(?:\/(.*))?\/?$/)
-    if (match && BUSINESS_SLUGS.includes(match[1] as BusinessSlug)) {
+    if (
+      match &&
+      BUSINESS_SLUGS.includes(match[1] as BusinessSlug) &&
+      shouldRedirectApexToSubdomain(host)
+    ) {
       const slug = match[1] as BusinessSlug
       const biz = getBusinessBySlug(slug)
       if (biz) {

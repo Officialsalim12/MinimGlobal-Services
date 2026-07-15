@@ -1,4 +1,4 @@
-﻿import StudiosPageHero from '@/components/StudiosPageHero'
+import StudiosPageHero from '@/components/StudiosPageHero'
 import {
   Mic,
   Speaker,
@@ -103,10 +103,10 @@ export default function SoundStudioPage() {
               critical to an immersive experience.
             </p>
             <div className="ms-hero-actions ms-intro-actions">
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Talk to Our Engineers
               </a>
-              <a href="/contact" className="ms-btn ms-btn-outline">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-outline">
                 Need a Quick Quote
               </a>
             </div>
@@ -181,7 +181,7 @@ export default function SoundStudioPage() {
                   </div>
                   <h3>{card.title}</h3>
                   <p>{card.description}</p>
-                  <a href="/contact" className="ms-text-link">
+                  <a href="/businesses/studios/contact" className="ms-text-link">
                     Inquire
                   </a>
                 </article>
@@ -204,7 +204,7 @@ export default function SoundStudioPage() {
             className="ms-hero-actions"
             style={{ justifyContent: 'center', marginTop: 24 }}
           >
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Contact Us
             </a>
           </div>

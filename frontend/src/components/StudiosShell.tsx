@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { getApexPublicUrl } from '@/data/businesses'
+import { getApexPublicUrl, getDivisionHref } from '@/data/businesses'
 import { STUDIOS_NAV } from '@/data/studios'
 
 export default function StudiosShell({ children }: { children: React.ReactNode }) {
@@ -12,6 +12,7 @@ export default function StudiosShell({ children }: { children: React.ReactNode }
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const apexUrl = getApexPublicUrl()
+  const href = (path: string) => getDivisionHref('studios', path, pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -38,7 +39,7 @@ export default function StudiosShell({ children }: { children: React.ReactNode }
         }`}
       >
         <div className="ms-nav-inner">
-          <a href="/" className="ms-nav-logo" onClick={() => setMenuOpen(false)}>
+          <a href={href('/')} className="ms-nav-logo" onClick={() => setMenuOpen(false)}>
             <Image
               src="/images/logo.png"
               alt="Minim Studios"
@@ -53,7 +54,7 @@ export default function StudiosShell({ children }: { children: React.ReactNode }
             {STUDIOS_NAV.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={href(link.href)}
                 className={`ms-nav-link ${publicPath === link.href ? 'is-active' : ''}`}
               >
                 {link.label}
@@ -74,7 +75,7 @@ export default function StudiosShell({ children }: { children: React.ReactNode }
 
         <div className={`ms-nav-mobile ${menuOpen ? 'is-open' : ''}`}>
           {STUDIOS_NAV.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            <a key={link.href} href={href(link.href)} onClick={() => setMenuOpen(false)}>
               {link.label}
             </a>
           ))}
@@ -106,19 +107,19 @@ export default function StudiosShell({ children }: { children: React.ReactNode }
             <h4>Our Studios</h4>
             <ul>
               <li>
-                <a href="/photography">Photography Studio</a>
+                <a href={href('/photography')}>Photography Studio</a>
               </li>
               <li>
-                <a href="/videography">Videography Studio</a>
+                <a href={href('/videography')}>Videography Studio</a>
               </li>
               <li>
-                <a href="/sound">Sound Studio</a>
+                <a href={href('/sound')}>Sound Studio</a>
               </li>
               <li>
-                <a href="/displays">Displays Studio</a>
+                <a href={href('/displays')}>Displays Studio</a>
               </li>
               <li>
-                <a href="/design">Design Studio</a>
+                <a href={href('/design')}>Design Studio</a>
               </li>
             </ul>
           </div>
@@ -126,10 +127,10 @@ export default function StudiosShell({ children }: { children: React.ReactNode }
             <h4>Company</h4>
             <ul>
               <li>
-                <a href="/team">Team</a>
+                <a href={href('/team')}>Team</a>
               </li>
               <li>
-                <a href="/contact">Contact Us</a>
+                <a href={href('/contact')}>Contact Us</a>
               </li>
               <li>
                 <a href={apexUrl}>Part of Minim Global</a>

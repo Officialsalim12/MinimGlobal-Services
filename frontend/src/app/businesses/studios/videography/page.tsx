@@ -1,4 +1,4 @@
-﻿import StudiosPageHero from '@/components/StudiosPageHero'
+import StudiosPageHero from '@/components/StudiosPageHero'
 import { ArrowRight } from 'lucide-react'
 
 const preProduction = [
@@ -106,7 +106,7 @@ export default function VideographyPage() {
         title="Commercial Videography"
         subtitle="Full service video production from concept to delivery."
         image="/images/Hero-6.jpg"
-        ctaHref="/contact"
+        ctaHref="/businesses/studios/contact"
         ctaLabel="Get in Touch"
       />
 
@@ -116,13 +116,13 @@ export default function VideographyPage() {
           <h2>Video Storytelling</h2>
           <div>
             <p>
-              It’s no secret that storytelling with video has become the most
+              It�s no secret that storytelling with video has become the most
               effective and powerful way to connect with your customers. As a
-              full service video team, we’ll help with the entire process,
+              full service video team, we�ll help with the entire process,
               taking your project from concept to reality.
             </p>
             <div className="ms-hero-actions ms-intro-actions">
-              <a href="/contact" className="ms-btn ms-btn-dark">
+              <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
                 Inquire for a Quote
               </a>
             </div>
@@ -156,14 +156,14 @@ export default function VideographyPage() {
               <p className="ms-eyebrow dark">Videography</p>
               <h2>Types Of Videos We Help Produce</h2>
             </div>
-            <a href="/contact" className="ms-btn ms-btn-dark">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-dark">
               Inquire for a Quote
             </a>
           </div>
           <p className="ms-vid-types-copy">
             Video is now the most viewed format online and attention spans are
             at an all time low. You have a lot of distractions to compete with
-            and a short window to grab someone’s attention. A short, well
+            and a short window to grab someone�s attention. A short, well
             planned, and direct message is key. We can help craft your message
             so your video gets just the results you want.
           </p>
@@ -173,7 +173,7 @@ export default function VideographyPage() {
           {videoTypes.map((video) => (
             <a
               key={video.title}
-              href="/contact"
+              href="/businesses/studios/contact"
               className="ms-case-card"
             >
               <div
@@ -192,23 +192,23 @@ export default function VideographyPage() {
         </div>
       </section>
 
-      {/* Let’s Get Started */}
+      {/* Let�s Get Started */}
       <section className="ms-cta ms-cta-compact">
         <div className="ms-container ms-section-head ms-section-head-center">
           <p className="ms-eyebrow">Get in touch</p>
-          <h2>Let’s Get Started!</h2>
+          <h2>Let�s Get Started!</h2>
           <p>
             Ready to produce a commercial, brand film, or event video? Tell us
-            about your project and we’ll get back to you quickly.
+            about your project and we�ll get back to you quickly.
           </p>
           <div
             className="ms-hero-actions"
             style={{ justifyContent: 'center', marginTop: 24 }}
           >
-            <a href="/contact" className="ms-btn ms-btn-primary">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-primary">
               Get in Touch
             </a>
-            <a href="/contact" className="ms-btn ms-btn-ghost">
+            <a href="/businesses/studios/contact" className="ms-btn ms-btn-ghost">
               Get in Touch
             </a>
           </div>

@@ -63,7 +63,7 @@ export default function FoodCartDrawer() {
           <div className="mf-cart-empty">
             <ShoppingBag size={36} />
             <p>Your cart is empty.</p>
-            <a href="/shop" className="mf-btn mf-btn-dark" onClick={closeCart}>
+            <a href="/businesses/food/shop" className="mf-btn mf-btn-dark" onClick={closeCart}>
               Continue shopping
             </a>
           </div>
