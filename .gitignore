@@ -34,3 +34,6 @@ Thumbs.db
 # Uploads / local data
 uploads/
 *.log
+
+# Vercel
+.vercel/
